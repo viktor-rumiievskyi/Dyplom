@@ -8,4 +8,6 @@ router.post('/logout', userController.logout);
 router.get('/activate/:link', userController.activatet);
 router.get('/refresh', userController.refresh);
 
+
 module.exports = router
+

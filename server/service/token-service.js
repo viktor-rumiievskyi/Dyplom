@@ -1,19 +1,26 @@
-const UserModel = require('../models/user-models');
-const bcrypt = require('bcrypt');
-const uuid = require('uuid');
-const mailService = require('./mail-service');
+const jwt = require('jsonwebtoken');
+const tokenModel = require('../models/token-model');
+
 
 class TokenService {
-	async registration(email, password) {
-		const candidate = await UserModel.findOne({email})
-		if (candidate) {
-			throw new Error (`Użytkownik z adresem pocztowym ${email} już istnieje`)
-		}
-		const hashPassword = await bcrypt.hash(password, 3);
-		const activationLink =  uuid.v4();
-		const user = await UserModel.create({email, password: hashPassword, activationLink});
-		await mailService.sendActivationMail(mail, activationLink);
+	generateTokens(payload) {
+			const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET, {expiresIn: '15s'})
+			const refreshToken = jwt.sign(payload, process.env.JWT_REFRESH_SECRET, {expiresIn: '30s'})
+			return {
+					accessToken,
+					refreshToken
+			}
 	}
+
+	async saveToken(userId, refreshToken) {
+		const tokenData = await tokenModel.findOne({user: userId})
+		if (tokenData) {
+				tokenData.refreshToken = refreshToken;
+				return tokenData.save();
+		}
+		const token = await tokenModel.create({user: userId, refreshToken})
+		return token;
+}
 }
 
-module.exports =  new TokenService();
+module.exports = new TokenService();
