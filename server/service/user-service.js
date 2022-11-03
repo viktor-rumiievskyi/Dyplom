@@ -27,6 +27,21 @@ class UserService {
 		}
 
 
+		async login(email, password) {
+			const user = await UserModel.findOne({email})
+			if (!user) {
+					throw ApiError.BadRequest('Nie znaleziono użytkownika z tym adresem e-mail')
+			}
+			const isPassEquals = await bcrypt.compare(password, user.password);
+			if (!isPassEquals) {
+					throw ApiError.BadRequest('Nieprawidłowe hasło');
+			}
+			const userDto = new UserDto(user);
+			const tokens = tokenService.generateTokens({...userDto});
+
+			await tokenService.saveToken(userDto.id, tokens.refreshToken);
+			return {...tokens, user: userDto}
+	}
 }
 
 module.exports =  new UserService();
