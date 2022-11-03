@@ -17,7 +17,7 @@ async login(req, res, next ) {
 	try {
 
 	}catch (e) {
-		
+		next(e);
 	}
 }
 
@@ -25,7 +25,7 @@ async logout(req, res, next ) {
 	try {
 
 	}catch (e) {
-		
+		next(e);
 	}
 }
 
@@ -33,7 +33,7 @@ async activatet(req, res, next ) {
 	try {
 
 	}catch (e) {
-		
+		next(e);
 	}
 }
 
@@ -41,7 +41,7 @@ async refresh(req, res, next ) {
 	try {
 		res.json(['123', '456']);
 	}catch (e) {
-		
+		next(e);
 	}
 }
 
