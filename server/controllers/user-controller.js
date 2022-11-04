@@ -5,6 +5,9 @@ const ApiError = require('../exceptions/api-error');
 
 
 class UserController {
+
+	
+	//Registration
 	async registration(req, res, next) {
 			try {
 				const errors = validationResult(req);
@@ -20,7 +23,7 @@ class UserController {
 			}
 	}
 
-
+//Login
 	async login(req, res, next) {
 		try {
 				const {email, password} = req.body;
@@ -32,7 +35,7 @@ class UserController {
 		}
 }
 
-
+//Logout
 async logout(req, res, next ) {
 	try {
 		const {refreshToken} = req.cookies;
@@ -52,6 +55,8 @@ async activatet(req, res, next ) {
 	}
 }
 
+
+//Refresh
 async refresh(req, res, next ) {
 	try {
 		const {refreshToken} = req.cookies;

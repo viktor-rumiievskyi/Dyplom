@@ -8,6 +8,8 @@ const ApiError = require('../exceptions/api-error');
 
 
 class UserService {
+
+//Registration
 	async registration(email, password) {
 			const candidate = await UserModel.findOne({email})
 			if (candidate) {
@@ -27,6 +29,7 @@ class UserService {
 		}
 
 
+//Login
 		async login(email, password) {
 			const user = await UserModel.findOne({email})
 			if (!user) {
@@ -43,16 +46,20 @@ class UserService {
 			return {...tokens, user: userDto}
 	}
 
+
+
+//Logout
 	async logout(refreshToken) {
 	const token = await tokenService.removeToken(refreshToken);
 	return token;
 	}
 
+
+	//Refresh
 	async refresh(refreshToken) {
 		if (!refreshToken) {
 			throw ApiError.UnauthorizedError();
 		}
-
 		const userData = tokenService.validateRefreshToken(refreshToken);
 		const tokenFromDb = await tokenService.findToken(refreshToken);
 		if (!userData || !tokenFromDb) {
