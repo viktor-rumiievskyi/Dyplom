@@ -1,22 +1,22 @@
-import React, {useContext} from 'react';
-import {Await, Routes, Redirect} from 'react-router-dom'
-import {authRoutes, publicRoutes} from "../routes";
+import React  from 'react';
+import {Routes, Route, AbortedDeferredError} from 'react-router-dom'  
+import {authRoutes, publicRoutes} from "../routes"
+import {SHOP_ROUTE} from "../utils/consts";
 
-
-const AppRouter = (() => {
-    const isAuth = false
-
+const AppRouter = () => {
+	const isAuth = false
     return (
-        <Await>
-            {isAuth  &&   authRoutes.map(({path, Component}) =>
-                <Routes key={path} path={path} component={Component} exact/>
+        <Routes>
+					{isAuth && authRoutes.map(({path, Component}) =>
+                <Route key={path} path={path} component={Component} exact/>
             )}
             {publicRoutes.map(({path, Component}) =>
-                <Routes key={path} path={path} component={Component} exact/>
+                <Route key={path} path={path} component={Component} exact/>
             )}
-        </Await>
+						<AbortedDeferredError to={SHOP_ROUTE}/>
+        </Routes>
     );
-});
+};
 
 
 export default AppRouter;
