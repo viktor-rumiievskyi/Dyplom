@@ -1,19 +1,17 @@
-import {Routes} from 'react-router-dom'
-import {Route} from 'react-router-dom'
-import { Header } from "./components/Header";
-import { Home,  Registration,  Login } from "./pages";
+import React from 'react';
+import {BrowserRouter, Navigate, Routes, Route} from 'react-router-dom';
+import LoginPage from './scenes/loginPage';
 
 function App() {
-  return (
-    <>
-      <Header />
-				<Routes>
-        <Home />
-        <Route path="/login" element={<Login />} />
-				<Route path="/registration" element={<Registration />} />
-				</Routes>
-    </>
-  );
+	return (
+	<div className="app">
+		<BrowserRouter>
+		<Routes>
+			<Route path="/" element={<LoginPage />} />
+		</Routes>
+		</BrowserRouter>
+	</div>
+	);
 }
 
 export default App;
