@@ -14,7 +14,7 @@ const LoginPage = () => {
         textAlign="center"
       >
         <Typography fontWeight="bold" fontSize="32px" color="primary">
-				Inteligentny dom
+				Login/Registration
         </Typography>
 				<Box
         width={isNonMobileScreens ? "50%" : "93%"}

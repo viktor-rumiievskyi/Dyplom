@@ -1,4 +1,5 @@
 import React from 'react';
+import Shop from './components/Shop/App'
 import {BrowserRouter,  Routes, Route} from 'react-router-dom';
 import LoginPage from './scenes/loginPage';
 import HomePage from './scenes/HomePage';
@@ -17,6 +18,7 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<CssBaseline/>
 		<Routes>
+			<Route path="/" element={<Shop />} />
 			<Route path="/login" element={<LoginPage />} />
 			<Route path="/home" element={ <HomePage />} />
 		</Routes>
