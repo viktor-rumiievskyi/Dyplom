@@ -56,6 +56,7 @@ const Form = () => {
       "http://localhost:51061/api/registration",
       {
         method: "POST",
+				body: formData,
 
       }
     );
@@ -82,7 +83,7 @@ const Form = () => {
           token: loggedIn.token,
         })
       );
-
+			navigate("/");
     }
   };
 
