@@ -19,7 +19,7 @@ body,
 }
 
 body {
-	background-color: #fff ;
+	background-color: black ;
 	color: black;
 	font-family: 'Noto Serif', serif;
 	font-weight: 300;
@@ -27,8 +27,8 @@ body {
 
 .wrapper {
 	color:  black;
-	width: 1280px;
-	margin: 50px auto;
+	width: 97%;
+	margin: 0 auto;
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -54,17 +54,23 @@ header ul.nav li {
 	font-weight: 500;
 	font-size: 20px;
 	transition: opacity 1s ease;
+
 }
 
 header ul.nav li:hover {
 	opacity: 0.3;
 }
 
+
+
+
 header .shop-cart-basket {
 	float: right;
 	cursor: pointer;
 	transition: color, transform 1s ease;
 	font-size: 20px;
+	margin: 5px 10px;
+
 }
 
 header .shop-cart-basket:hover,
@@ -79,7 +85,7 @@ header .shop-cart {
 	right: 0;
 	width: 450px;
 	min-height: 100px;
-	background: #fff;
+	color: #fff;
 	-webkit-box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
 	-moz-box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
 	box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
@@ -90,15 +96,16 @@ header .shop-cart {
 header .shop-cart-client {
 	float: right;
 	cursor: pointer;
-	transition: opacity 1s ease;
+	transition: color, transform 1s ease;
 	font-size: 20px;
-	margin-left: 40px;
+	margin: 5px 20px 0 0;
 }
 
 
 header .shop-cart-client:hover,
 header .shop-card-client.active {
 	color: #2F4F4F;
+	transform: scale(1.5);
 }
 
 header .presentation {
@@ -114,30 +121,77 @@ header .presentation {
 }
 
 header .presentation::after{
-	content: 'dfgd';
+	content: 'ZROBIĆ KROK W KIERUNKU WYGODNEGO ŻYCIA';
 	position: absolute;
 	top: 100px;
 	left: 50px;
 	width: 300px;
 	font-size: 40px;
 	font-weight: 600;
-	color: black;
+	color: #fff;
 }
 
+.carousel {
+	display: flex;
+	gap: 2rem;
+}
 
-header .presentation::before{
-	content: 'dvdfgfgdfgdf';
-	position: absolute;
-	top: 200px;
-	left: 50px;
-	width: 300px;
-	font-size: 15px;
+.carousel .figures {
+	display: flex;
+	flex: 1 1 0;
+	flex-direction: column;
+}
+.carousel .figures .number {
+	color: black;
 	font-weight: 600;
-	color: black;
+	font-size: 30px;
+	text-align: center;
 }
+
+.carousel .figures .text {
+	text-align: center;
+	color: black;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.span {
+	color:  black;
+	width: 97%;
+	margin: 0 auto;
+	font-family: 'Raleway', sans-serif;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+}
+
+.item-1 {
+	background-color: #00FFFF;
+}
+
+.item-2 {
+	background-color: #008B8B;
+}
+
+.item-3 {
+	background-color: #00008B;
+}
+
+
+
 
 footer {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 100px;
+	padding: 50px;
+	background: black; 
+}
+
+footer .text {
+color: #fff;
 }
 

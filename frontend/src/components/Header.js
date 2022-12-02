@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { BsFillBasket2Fill} from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
+
 
 export default function Header() {
 	let [cartOpen, setCartOpen] = useState (false)
@@ -9,18 +11,15 @@ export default function Header() {
 			<div>
 				<span className='logo'>Inteligentny dom</span>
 				<ul className='nav'>
-					<li>Blog</li>
+					<li><NavLink to ="/blog">Blogs</NavLink></li>
 					<li>Contact</li>
-				</ul>
+					</ul>
 				<BsFillBasket2Fill onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-basket ${cartOpen && 'active'}`} />
-				<BsFillPersonFill className='shop-cart-client' />
-
+				<NavLink to ="/login"><BsFillPersonFill   className='shop-cart-client' /></NavLink>
 				{cartOpen && (
 					<div className='shop-cart'>
-
 					</div>
 				)}
-
 			</div>
 			<div className='presentation'></div>
 		</header>

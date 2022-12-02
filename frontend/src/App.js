@@ -2,12 +2,13 @@ import React from 'react';
 import Shop from './components/Shop/App'
 import {BrowserRouter,  Routes, Route} from 'react-router-dom';
 import LoginPage from './scenes/loginPage';
-import HomePage from './scenes/HomePage';
 import { useMemo } from "react";
 import { useSelector } from 'react-redux';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
+import Blogs from './components/Blogs';
+
 
 function App() {
 	const mode = useSelector((state) => state.mode);
@@ -19,8 +20,8 @@ function App() {
 			<CssBaseline/>
 		<Routes>
 			<Route path="/" element={<Shop />} />
+			<Route path="/blog" element={<Blogs />} />
 			<Route path="/login" element={<LoginPage />} />
-			<Route path="/home" element={ <HomePage />} />
 		</Routes>
 		</ThemeProvider>
 		</BrowserRouter>

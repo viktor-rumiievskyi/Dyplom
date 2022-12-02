@@ -1,0 +1,40 @@
+import { Children, cloneElement, useEffect, useReducer } from 'react'
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import './Carousel.css'
+const PAGE_WIDTH = 450
+export const Carousel = ({children}) => {
+	const [pages, setPages] = useReducer([])
+
+
+	const handLeftArrowClick = () => {
+		console.log('handLeftArrowClick')
+	}
+	const handRightArrowClick = () => {
+		console.log('handRightArrowClick')
+	}
+
+		useEffect(() => {
+			setPages(
+				Children.map(children, (child) => {
+				return cloneElement(child, {
+					style: {
+						height: '100%',
+						minWidth: `${PAGE_WIDTH}px`,
+						maxWidth: `${PAGE_WIDTH}px`,
+					},
+				})
+			})
+			)
+		}, [])
+	
+	return (
+		<div className="main-container">
+			<FaChevronLeft className='arrow' onClick={handLeftArrowClick} />
+			<div className="window">
+				<div 
+				className="all-pages-container">	{pages}</div>
+			</div>
+			<FaChevronRight className='arrow' onClick={handRightArrowClick} />
+		</div>
+	)
+}
