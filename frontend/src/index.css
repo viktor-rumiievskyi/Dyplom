@@ -153,6 +153,7 @@ header .presentation::after{
 	color: black;
 	font-weight: 800;
 	text-transform: uppercase;
+	max-width: 500px;
 }
 
 .span {
@@ -162,6 +163,18 @@ header .presentation::after{
 	font-family: 'Raleway', sans-serif;
 }
 
+.text-1 {
+	text-align: center;
+	width: 100%;
+	margin: 60px auto;
+	font-weight: 900;
+	font-size: 40px;
+}
+
+
+.item item-text {
+
+}
 .item {
 	display: flex;
 	align-items: center;
@@ -171,6 +184,7 @@ header .presentation::after{
 
 .item-1 {
 	background-color: #00FFFF;
+	
 }
 
 .item-2 {
@@ -182,7 +196,15 @@ header .presentation::after{
 }
 
 
+.item-image {
+	width: 150px;
+	height: 150px;
+}
 
+.mr-3 {
+	width: 150px;
+	height: 150px;
+}
 
 footer {
 	text-align: center;
