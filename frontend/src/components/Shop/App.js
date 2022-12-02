@@ -14,10 +14,7 @@ export default class App extends Component {
 				<Figures />
 				<Text />
 				<Carousel>
-					<div className='item item-text'>hgjhtjghjhgjgh</div>
 					<div className='item item-1'>hgjhtjghjhgjgh</div>
-					<img class="item item-image" src="" alt=""/>
-
 					<div className='item item-2'>item 2</div>
 					<div className='item item-3'>item 3</div>
 				</Carousel>

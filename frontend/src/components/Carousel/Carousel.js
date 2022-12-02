@@ -55,7 +55,6 @@ export const Carousel = ({ children }) => {
           {pages}
         </div>
 				<div className=''> 
-
 				</div>
 				<Accordion>
 					<img
