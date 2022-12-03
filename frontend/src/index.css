@@ -141,6 +141,7 @@ header .presentation::after{
 .carousel {
 	display: flex;
 	gap: 2rem;
+	margin: 0 10px 50px;
 }
 
 .carousel .figures {
@@ -163,6 +164,15 @@ header .presentation::after{
 	max-width: 500px;
 }
 /* Figures */
+
+/* Text_Items */
+.text_items {
+	text-align: center;
+	margin: 55px ;
+	font-size: 25px;
+	font-weight: 800;
+}
+/* Text_Items */
 
 /* Items */
 main {
@@ -224,25 +234,25 @@ main .add-to-cart:hover {
 
 
 /* Blogs */
-.blog .header {
+blog .cap {
 	position: relative;
 	background: black;
 	color: #fff;
 }
 
-.blog  .logo {
+blog .logo {
 	font-weight: 600;
 	font-size: 30px;
 	text-align: center;
 }
 
 
-.blog  ul.nav {
+blog  ul.nav {
 	float: right;
 	list-style: none;
 }
 
-.blogs  ul.nav li {
+blog  ul.nav li {
 	display: inline;
 	margin-left: 40px;
 	cursor: pointer;
@@ -252,14 +262,14 @@ main .add-to-cart:hover {
 
 }
 
-.blogs  ul.nav li:hover {
+blog  ul.nav li:hover {
 	opacity: 0.3;
 }
 
 
 
 
-.blogs  .shop-cart-basket {
+blog  .shop-cart-basket {
 	float: right;
 	cursor: pointer;
 	transition: color, transform 1s ease;
@@ -268,13 +278,13 @@ main .add-to-cart:hover {
 
 }
 
-.blogs  .shop-cart-basket:hover,
-.blogs  .shop-cart-basket.active {
+blog  .shop-cart-basket:hover,
+blog	 .shop-cart-basket.active {
 	color: #FF4500;
 	transform: scale(1.5);
 }
 
-.blogs  .shop-cart {
+blog  .shop-cart {
 	position: absolute;
 	top: 30px;
 	right: 0;
@@ -289,7 +299,7 @@ main .add-to-cart:hover {
 }
 
 
-.blog  .shop-cart-client {
+blog  .shop-cart-client {
 	float: right;
 	cursor: pointer;
 	transition: color, transform 1s ease;
@@ -298,8 +308,8 @@ main .add-to-cart:hover {
 }
 
 
-.blogs  .shop-cart-client:hover,
-.blogs  .shop-card-client.active {
+blog  .shop-cart-client:hover,
+blog  .shop-card-client.active {
 	color: #2F4F4F;
 	transform: scale(1.5);
 }
