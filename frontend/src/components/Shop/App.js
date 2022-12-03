@@ -12,6 +12,7 @@ class App extends React.Component {
 	constructor (props) {
 		super(props)
 		this.state = {
+			orders: [],
 			items: [
 				{
 					id: 1,
@@ -135,15 +136,16 @@ class App extends React.Component {
 				},
 			]
 		}
+		this.addToOrder = this.addToOrder.bind(this)
 	}
 
 	render() {
 		return (
 			<div className='wrapper'>
-				<Header />
+				<Header orders={this.state.orders} />
 				<Figures />
 				<Text_Items />
-				<Items items={this.state.items}/>
+				<Items items={this.state.items} onAdd={this.addToOrder}/>
 				<Text />
 				<Carousel>
 					<div className='item item-1'>hgjhtjghjhgjgh</div>
@@ -154,5 +156,16 @@ class App extends React.Component {
 			</div>
 		)
 	}
+
+	addToOrder(itema) {
+		let isInArray = false
+		this.state.orders.forEach(el => {
+			if(el.id === itema.id)
+			isInArray = true
+		})
+		if(!isInArray)
+		this.setState({ orders: [...this.state.orders, itema] })
+	}
 }
+
 export default App

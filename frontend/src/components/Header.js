@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { BsFillBasket2Fill} from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
 import { NavLink } from 'react-router-dom';
+import Order from './Order';
 
 
 
 
-export default function Header () {
+export default function Header (props) {
 	let [cartOpen, setCartOpen] = useState (false)
 	return (
 		<header>
@@ -18,8 +19,12 @@ export default function Header () {
 					</ul>
 				<BsFillBasket2Fill onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-basket ${cartOpen && 'active'}`} />
 				<NavLink to ="/login"><BsFillPersonFill   className='shop-cart-client' /></NavLink>
+				
 				{cartOpen && (
 					<div className='shop-cart'>
+			{props.orders.map(el => (
+			<Order key={el.id} itema={el} />
+			))}
 					</div>
 				)}
 			</div>
@@ -27,3 +32,4 @@ export default function Header () {
 		</header>
 	)
 }
+
