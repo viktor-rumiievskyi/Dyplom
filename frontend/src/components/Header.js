@@ -4,7 +4,9 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { NavLink } from 'react-router-dom';
 
 
-export default function Header() {
+
+
+export default function Header () {
 	let [cartOpen, setCartOpen] = useState (false)
 	return (
 		<header>

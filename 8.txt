@@ -1,0 +1,17 @@
+app1 {
+	color:  black;
+	width: 97%;
+	margin: 0 auto;
+	font-family: 'Raleway', sans-serif;
+}
+.blogs-header {
+	position: relative;
+	background: black;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+}
+.blogs-logo {
+	font-weight: 600;
+	font-size: 30px;
+	text-align: center;
+}
