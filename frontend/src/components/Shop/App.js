@@ -7,6 +7,7 @@ import Text from '../Text'
 import Items from '../Items'
 import Text_Items from '../Text_Items'
 import Categories from '../Categories'
+import ShowFullItema from '../ShowFullItema'
 
 
 class App extends React.Component {
@@ -136,12 +137,15 @@ class App extends React.Component {
 					category: 'Syreny' ,
 					price: '30.00',
 				},
-			]
+			],
+			showFullItema: false,
+			fullItema: {}
 		}
 		this.state.currentItems = this.state.items
 		this.addToOrder = this.addToOrder.bind(this)
 		this.deleteOrder = this.deleteOrder.bind(this)
 		this.chooseCategory = this.chooseCategory.bind(this)
+		this.onShowItema = this.onShowItema.bind(this)
 	}
 
 	render() {
@@ -151,7 +155,8 @@ class App extends React.Component {
 				<Figures />
 				<Text_Items />
 				<Categories chooseCategory={this.chooseCategory} />
-				<Items items={this.state.currentItems} onAdd={this.addToOrder}/>
+				<Items onShowItema={this.onShowItema} items={this.state.currentItems} onAdd={this.addToOrder}/>
+				{this.state.showFullItema && <ShowFullItema onAdd={this.addToOrder} onShowItema={this.onShowItema} itema={this.state.fullItema} />}
 				<Text />
 				<Carousel>
 					<div className='item item-1'>hgjhtjghjhgjgh</div>
@@ -161,6 +166,11 @@ class App extends React.Component {
 				<Footer />
 			</div>
 		)
+	}
+
+	onShowItema(itema) {
+		this.setState({fullItema: itema})
+		this.setState({showFullItema: !this.state.showFullItema})
 	}
 
 	chooseCategory(category) {
