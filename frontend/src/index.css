@@ -122,6 +122,34 @@ header .shop-cart .itema p {
 	font-weight: 500;
 }
 
+header .shop-cart .empty h2 {
+	color: black;
+}
+
+header .shop-cart .summa {
+	float: left;
+	width: 100%;
+	font-weight: 600;
+	color: black;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+header .shop-cart .itema .delete-icon {
+	color: black;
+	float: right;
+	position: relative;
+	top: -40px;
+	cursor: pointer;
+	transition: color, transform 1s ease;
+	font-size: 20px;
+}
+
+header .shop-cart .itema .delete-icon:hover {
+	color: #FF4500;
+	transform: scale(1.5);
+}
+
 
 header .shop-cart-client {
 	float: right;
