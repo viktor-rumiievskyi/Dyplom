@@ -6,6 +6,7 @@ import {Carousel } from '../Carousel/Carousel'
 import Text from '../Text'
 import Items from '../Items'
 import Text_Items from '../Text_Items'
+import Categories from '../Categories'
 
 
 class App extends React.Component {
@@ -13,13 +14,14 @@ class App extends React.Component {
 		super(props)
 		this.state = {
 			orders: [],
+			currentItems: [],
 			items: [
 				{
 					id: 1,
 					title: 'Hub Hybrid (4G)',
 					img: 'hh4g_m@1x.jpg',
 					desc: 'Гібридна централь системи безпеки з підтримкою фотоверифікації тривог. Підтримка пристроїв Jeweller та Fibra. Підтримка Ethernet та двох сім-карток (2G/3G/4G). До 100 пристроїв у системі. До 25 пристроїв відеоспостереження. До 5 ретрансляторів радіосигналу. До 50 користувачів. До 9 груп охорони. До 32 сценаріїв автоматизації.',
-					cetegory:'Hub' ,
+					category:'Hub' ,
 					price: '40.00',
 				},
 				{
@@ -27,7 +29,7 @@ class App extends React.Component {
 					title: 'Hub Hybrid (2G)',
 					img: 'hh2g_m@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Hub' ,
+					category: 'Hub' ,
 					price: '30.00',
 				},
 				{
@@ -35,7 +37,7 @@ class App extends React.Component {
 					title: 'Hub 2 Plus Jeweller',
 					img: 'hub_1_1_m@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Jeweller' ,
+					category: 'Hub' ,
 					price: '30.00',
 				},
 				{
@@ -43,7 +45,7 @@ class App extends React.Component {
 					title: 'Hub Plus Jeweller',
 					img: 'hub_1_3_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Jeweller' ,
+					category: 'Hubr' ,
 					price: '30.00',
 				},
 				{
@@ -51,7 +53,7 @@ class App extends React.Component {
 					title: 'LeaksProtect',
 					img: 'leaks_1_1_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Czujniki wycieku wody' ,
+					category: 'Czujniki wycieku wody' ,
 					price: '30.00',
 				},
 				{
@@ -59,7 +61,7 @@ class App extends React.Component {
 					title: 'MotionCam (PhOD) Fibra',
 					img: 'mc_ffibra_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Czujniki Ruhu:Fibra(Przewodowe czujniki ruchu)' ,
+					category: 'Czujniki Ruhu' ,
 					price: '30.00',
 				},
 				{
@@ -67,7 +69,7 @@ class App extends React.Component {
 					title: 'MotionCam Fibra',
 					img: 'mc_f_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Czujniki Ruhu:Fibra(Przewodowe czujniki ruchu)' ,
+					category: 'Czujniki Ruhu' ,
 					price: '30.00',
 				},
 				{
@@ -75,7 +77,7 @@ class App extends React.Component {
 					title: 'MotionProtect Fibra',
 					img: 'mp_f_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Czujniki Ruhu:Fibra(Przewodowe czujniki ruchu)' ,
+					category: 'Czujniki Ruhu' ,
 					price: '30.00',
 				},
 				{
@@ -83,7 +85,7 @@ class App extends React.Component {
 					title: 'MotionCam (PhOD) Jeweller',
 					img: 'mс_phod_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Czujniki Ruhu:Jeweller(Bezprzewodowe czujniki ruchu)' ,
+					category: 'Czujniki Ruhu' ,
 					price: '30.00',
 				},
 				{
@@ -91,7 +93,7 @@ class App extends React.Component {
 					title: 'MotionCam Jeweller',
 					img: 'mс_xl@1x.jpg',
 					desc: 'Гібридна централь системи безпеки з підтримкою фотоверифікації тривог. Підтримка пристроїв Jeweller та Fibra. Підтримка Ethernet та двох сім-карток (2G/3G/4G). До 100 пристроїв у системі. До 25 пристроїв відеоспостереження. До 5 ретрансляторів радіосигналу. До 50 користувачів. До 9 груп охорони. До 32 сценаріїв автоматизації',
-					cetegory: 'Czujniki Ruhu:Jeweller(Bezprzewodowe czujniki ruchu)' ,
+					category: 'Czujniki Ruhu' ,
 					price: '30.00',
 				},
 				{
@@ -99,7 +101,7 @@ class App extends React.Component {
 					title: 'MotionProtect Jeweller',
 					img: 'motion_detect_block1_2_xl@1x.jpg',
 					desc: 'Гібридна централь системи безпеки з підтримкою фотоверифікації тривог. Підтримка пристроїв Jeweller та Fibra. Підтримка Ethernet та двох сім-карток (2G/3G/4G). До 100 пристроїв у системі. До 25 пристроїв відеоспостереження. До 5 ретрансляторів радіосигналу. До 50 користувачів. До 9 груп охорони. До 32 сценаріїв автоматизації',
-					cetegory: 'Czujniki Ruhu:Jeweller(Bezprzewodowe czujniki ruchu)' ,
+					category: 'Czujniki Ruhu' ,
 					price: '30.00',
 				},
 				{
@@ -107,7 +109,7 @@ class App extends React.Component {
 					title: 'HomeSiren Fibra',
 					img: 'hsf_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Syreny:Fibra(Syreny przewodowe)' ,
+					category: 'Syreny' ,
 					price: '30.00',
 				},
 				{
@@ -115,7 +117,7 @@ class App extends React.Component {
 					title: 'StreetSiren Fibra',
 					img: 'ssf_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Syreny:Fibra(Syreny przewodowe)' ,
+					category: 'Syreny' ,
 					price: '30.00',
 				},
 				{
@@ -123,7 +125,7 @@ class App extends React.Component {
 					title: 'HomeSiren Jeweller',
 					img: 'hub_1_3_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Syreny:Jeweller(Syreny bezprzewodowe)' ,
+					category: 'Syreny' ,
 					price: '30.00',
 				},
 				{
@@ -131,13 +133,15 @@ class App extends React.Component {
 					title: 'StreetSiren Jeweller',
 					img: 'homesiren_xl@1x.jpg',
 					desc: 'fgdfgd',
-					cetegory: 'Syreny:Jeweller(Syreny bezprzewodowe)' ,
+					category: 'Syreny' ,
 					price: '30.00',
 				},
 			]
 		}
+		this.state.currentItems = this.state.items
 		this.addToOrder = this.addToOrder.bind(this)
 		this.deleteOrder = this.deleteOrder.bind(this)
+		this.chooseCategory = this.chooseCategory.bind(this)
 	}
 
 	render() {
@@ -146,7 +150,8 @@ class App extends React.Component {
 				<Header orders={this.state.orders} onDelete={this.deleteOrder} />
 				<Figures />
 				<Text_Items />
-				<Items items={this.state.items} onAdd={this.addToOrder}/>
+				<Categories chooseCategory={this.chooseCategory} />
+				<Items items={this.state.currentItems} onAdd={this.addToOrder}/>
 				<Text />
 				<Carousel>
 					<div className='item item-1'>hgjhtjghjhgjgh</div>
@@ -156,6 +161,16 @@ class App extends React.Component {
 				<Footer />
 			</div>
 		)
+	}
+
+	chooseCategory(category) {
+		if(category === 'all') {
+			this.setState({ currentItems: this.state.items})
+			return
+		}
+		this.setState({
+			currentItems: this.state.items.filter(el => el.category === category)
+		})
 	}
 
 	deleteOrder(id) {
