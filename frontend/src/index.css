@@ -1,13 +1,492 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap');
+
+html,
+body,
+#root,
+.app {
+	height: 100%;
+	width: 100%;
+	font-family: 'Rubik Distressed', cursive;
+
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+	margin: 0;
+	padding: 0;
 }
+
+body {
+	background-color: black ;
+	color: black;
+	font-family: 'Noto Serif', serif;
+	font-weight: 300;
+}
+
+.wrapper {
+	color:  black;
+	width: 97%;
+	margin: 0 auto;
+	font-family: 'Raleway', sans-serif;
+}
+
+/* Header */
+header {
+	position: relative;
+	background-color: #D9D4E1;
+	color: black;
+}
+
+header .logo {
+	font-weight: 600;
+	font-size: 30px;
+	margin: 20px;
+	display: inline-block;
+}
+
+
+header ul.nav {
+	float: right;
+	list-style: none;
+	margin: 20px;
+}
+
+header ul.nav li {
+	display: inline;
+	margin-left: 40px;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 20px;
+	transition: opacity 1s ease;
+
+}
+
+header ul.nav li:hover {
+	opacity: 0.3;
+}
+
+
+
+
+header .shop-cart-basket {
+	float: right;
+	cursor: pointer;
+	transition: color, transform 1s ease;
+	font-size: 20px;
+	float: right;
+	list-style: none;
+	margin: 25px;
+}
+
+header .shop-cart-basket:hover,
+header .shop-cart-basket.active {
+	color: #FF4500;
+	transform: scale(1.5);
+}
+
+header .shop-cart-client {
+	float: right;
+	cursor: pointer;
+	transition: color, transform 1s ease;
+	font-size: 20px;
+	margin: 26px;
+
+}
+
+
+header .shop-cart-client:hover,
+header .shop-card-client.active {
+	color: #2F4F4F;
+	transform: scale(1.5);
+}
+
+header .shop-cart {
+	position: absolute;
+	top: 55px;
+	right: 0;
+	width: 500px;
+	background: #fff;
+	-webkit-box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
+	-moz-box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
+	box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
+	z-index: 1000;
+	padding: 20px;
+	padding-bottom: 0;
+}
+
+
+
+header .shop-cart .itema {
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+	
+}
+
+header .shop-cart .itema img {
+	width: 90px; 
+	float: left;
+	margin-right: 20px;
+}
+
+header .shop-cart .itema h3 {
+	font-size: 15px;
+	margin-bottom: 10px;
+	color: black;
+}
+
+header .shop-cart .itema p {
+	color: black;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+header .shop-cart .empty h2 {
+	color: black;
+}
+
+header .shop-cart .summa {
+	float: left;
+	width: 100%;
+	font-weight: 600;
+	color: black;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+header .shop-cart .itema .delete-icon {
+	color: black;
+	float: right;
+	position: relative;
+	top: -40px;
+	cursor: pointer;
+	transition: color, transform 1s ease;
+	font-size: 20px;
+}
+
+header .shop-cart .itema .delete-icon:hover {
+	color: #FF4500;
+	transform: scale(1.5);
+}
+
+
+header .presentation {
+	background-position: center;
+	margin: 50px 0;
+	width: 100%;
+	height: 500px;
+	background: url("./img/2021-03-24\ \(1\).jpg") center no-repeat;
+	background-size: cover;
+	background-blend-mode:multiply;
+	position: relative;
+}
+
+header .presentation::after{
+	content: 'ZROBIĆ KROK W KIERUNKU WYGODNEGO ŻYCIA';
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	width: 300px;
+	font-size: 40px;
+	font-weight: 600;
+	color: #fff;
+}
+/* Header */
+
+/* Figures */
+.carousel {
+	display: flex;
+	gap: 2rem;
+	margin: 0 10px 50px;
+}
+
+.carousel .figures {
+	display: flex;
+	flex: 1 1 0;
+	flex-direction: column;
+}
+.carousel .figures .number {
+	color: black;
+	font-weight: 600;
+	font-size: 30px;
+	text-align: center;
+}
+
+.carousel .figures .text {
+	text-align: center;
+	color: black;
+	font-weight: 800;
+	text-transform: uppercase;
+	max-width: 500px;
+}
+/* Figures */
+
+/* Text_Items */
+.text_items {
+	text-align: center;
+	margin: 55px ;
+	font-size: 25px;
+	font-weight: 800;
+}
+/* Text_Items */
+
+/* Categories */
+.categories div {
+	display: inline-block;
+	background: #FAEBD7;
+	border-radius: 50px;
+	padding: 15px 35px;
+	margin-bottom: 55px;
+	margin-right: 25px;
+	cursor: pointer;
+	border: 3px solid transparent;
+	transition: all 1.5s ease;
+}
+
+.categories div:hover {
+	border-color: silver;
+	transform: scale(1.2);
+	font-weight: 500;
+	font-size: 15px;
+}
+/* Categories */
+
+
+
+/* Items */
+.full-itema {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #0c0c0e86;
+	z-index: 9999;
+	overflow: auto;
+}
+
+.full-itema > div {
+	width: 600px;
+	position: relative;
+	margin: 10% auto;
+	padding: 40px 30px;
+	background: #fff;
+	border-radius: 9px;
+}
+
+main {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+main .itema {
+	width: 30%;
+	margin-bottom: 50px;
+	background: #FAEBD7;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 15px;
+}
+main .itema img,
+.full-itema img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	transition: transform 500ms ease;
+	cursor: pointer;
+}
+
+main .itema img:hover,
+.full-itema  img:hover{
+	transform: scale(1.05);
+}
+
+main h3,  main b,
+.full-itema h3,  .full-itema b{
+	margin: 10px 15px;
+	display: flex;
+	color: black;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.full-itema p {
+	font-weight: 800;
+	font-size: 25px;
+	margin: 10px 15px;
+}
+
+
+main b,
+.full-itema b{
+	color: black;
+	float: left;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+main .add-to-cart,
+.full-itema  .add-to-cart{
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	background: #4A4A46;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	color: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	font-weight: 600;
+	transition: transform 500ms ease;
+}
+
+main .add-to-cart:hover,
+.full-itema .add-to-cart:hover  {
+	transform: scale(1.5) translateY(-5px);
+	
+}
+/* Items */
+
+
+/* Blogs */
+blogs .cap {
+	position: relative;
+	background: black;
+	color: #fff;
+}
+
+blogs .logo {
+	font-weight: 600;
+	font-size: 30px;
+	text-align: center;
+}
+
+
+blogs  ul.nav {
+	float: right;
+	list-style: none;
+}
+
+blogs  ul.nav li {
+	display: inline;
+	margin-left: 40px;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 20px;
+	transition: opacity 1s ease;
+
+}
+
+blogs  ul.nav li:hover {
+	opacity: 0.3;
+}
+
+
+
+
+blogs  .shop-cart-basket {
+	float: right;
+	cursor: pointer;
+	transition: color, transform 1s ease;
+	font-size: 20px;
+	margin: 5px 10px;
+
+}
+
+blogs  .shop-cart-basket:hover,
+blogs	 .shop-cart-basket.active {
+	color: #FF4500;
+	transform: scale(1.5);
+}
+
+blogs  .shop-cart {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	width: 450px;
+	min-height: 100px;
+	background-color: #fff;
+	color: #fff;
+	-webkit-box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
+	-moz-box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
+	box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
+	z-index: 1000;
+}
+
+
+blogs .shop-cart-client {
+	float: right;
+	cursor: pointer;
+	transition: color, transform 1s ease;
+	font-size: 20px;
+	margin: 5px 20px 0 0;
+}
+
+
+blogs  .shop-cart-client:hover,
+blogs  .shop-card-client.active {
+	color: #2F4F4F;
+	transform: scale(1.5);
+}
+
+blogs .post {
+	display: flex;
+	padding: 50px;
+	margin: 15px;
+}
+
+blogs .img {
+	width: 20%;
+	height: 20%;
+}
+
+
+
+
+
+/* Blogs */
+
+/* Carousel */
+.text-1 {
+	text-align: center;
+	width: 100%;
+	margin: 60px auto;
+	font-weight: 900;
+	font-size: 40px;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.item-1 {
+	background: #979498;
+	font-weight: 700;
+}
+
+.item-2 {
+	background: #979498;
+	font-weight: 700;
+}
+
+.item-3 {
+	background-color: #979498;
+	font-weight: 700;
+}
+
+
+.mr-3 {
+	width: 150px;
+	height: 150px;
+}
+
+/* Carousel */
+
