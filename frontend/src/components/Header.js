@@ -26,20 +26,20 @@ export default function Header (props) {
 	return (
 		<header>
 			<div>
-				<span className='logo'>Inteligentny dom</span>
+				<div className='logo'>Inteligentny dom</div>
 				<ul className='nav'>
 					<li><NavLink to ="/blog">Blogs</NavLink></li>
 					<li>Contact</li>
 					</ul>
 				<BsFillBasket2Fill onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-basket ${cartOpen && 'active'}`} />
 				<NavLink to ="/login"><BsFillPersonFill   className='shop-cart-client' /></NavLink>
-				
 				{cartOpen && (
 					<div className='shop-cart'>
 						{props.orders.length > 0 ?
 						showOrders(props) : showNothing()}
 					</div>
 				)}
+
 			</div>
 			<div className='presentation'></div>
 		</header>

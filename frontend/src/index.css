@@ -35,20 +35,22 @@ body {
 /* Header */
 header {
 	position: relative;
-	background: black;
-	color: #fff;
+	background-color: #D9D4E1;
+	color: black;
 }
 
 header .logo {
 	font-weight: 600;
 	font-size: 30px;
-	text-align: center;
+	margin: 20px;
+	display: inline-block;
 }
 
 
 header ul.nav {
 	float: right;
 	list-style: none;
+	margin: 20px;
 }
 
 header ul.nav li {
@@ -73,8 +75,9 @@ header .shop-cart-basket {
 	cursor: pointer;
 	transition: color, transform 1s ease;
 	font-size: 20px;
-	margin: 5px 10px;
-
+	float: right;
+	list-style: none;
+	margin: 25px;
 }
 
 header .shop-cart-basket:hover,
@@ -83,11 +86,27 @@ header .shop-cart-basket.active {
 	transform: scale(1.5);
 }
 
+header .shop-cart-client {
+	float: right;
+	cursor: pointer;
+	transition: color, transform 1s ease;
+	font-size: 20px;
+	margin: 26px;
+
+}
+
+
+header .shop-cart-client:hover,
+header .shop-card-client.active {
+	color: #2F4F4F;
+	transform: scale(1.5);
+}
+
 header .shop-cart {
 	position: absolute;
-	top: 30px;
+	top: 55px;
 	right: 0;
-	width: 450px;
+	width: 500px;
 	background: #fff;
 	-webkit-box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
 	-moz-box-shadow: 23px 19px 42px 18px rgba(29, 56, 42, 1);
@@ -103,6 +122,7 @@ header .shop-cart .itema {
 	width: 100%;
 	float: left;
 	margin-bottom: 20px;
+	
 }
 
 header .shop-cart .itema img {
@@ -118,8 +138,9 @@ header .shop-cart .itema h3 {
 }
 
 header .shop-cart .itema p {
-	color: #00E1FD;
-	font-weight: 500;
+	color: black;
+	font-weight: 700;
+	font-size: 15px;
 }
 
 header .shop-cart .empty h2 {
@@ -151,21 +172,6 @@ header .shop-cart .itema .delete-icon:hover {
 }
 
 
-header .shop-cart-client {
-	float: right;
-	cursor: pointer;
-	transition: color, transform 1s ease;
-	font-size: 20px;
-	margin: 5px 20px 0 0;
-}
-
-
-header .shop-cart-client:hover,
-header .shop-card-client.active {
-	color: #2F4F4F;
-	transform: scale(1.5);
-}
-
 header .presentation {
 	background-position: center;
 	margin: 50px 0;
@@ -174,7 +180,6 @@ header .presentation {
 	background: url("./img/2021-03-24\ \(1\).jpg") center no-repeat;
 	background-size: cover;
 	background-blend-mode:multiply;
-	background-color: #FAEBD7;
 	position: relative;
 }
 
@@ -236,13 +241,15 @@ header .presentation::after{
 	margin-bottom: 55px;
 	margin-right: 25px;
 	cursor: pointer;
-	border: 1px solid transparent;
-	transition: all 1s ease;
+	border: 3px solid transparent;
+	transition: all 1.5s ease;
 }
 
 .categories div:hover {
 	border-color: silver;
-	transform: scale(1.1);
+	transform: scale(1.2);
+	font-weight: 500;
+	font-size: 15px;
 }
 /* Categories */
 
@@ -297,14 +304,26 @@ main .itema img:hover,
 	transform: scale(1.05);
 }
 
-main h2, main p, main b,
-.full-itema h2, .full-itema p, .full-itema b{
-	margin: 10px 20px;
-	color: #00FF5B;
+main h3,  main b,
+.full-itema h3,  .full-itema b{
+	margin: 10px 15px;
+	display: flex;
+	color: black;
+	font-size: 20px;
+	font-weight: 400;
 }
+
+.full-itema p {
+	font-weight: 800;
+	font-size: 25px;
+	margin: 10px 15px;
+}
+
+
 main b,
 .full-itema b{
 	color: black;
+	float: left;
 	font-weight: 600;
 	font-size: 20px;
 }
@@ -314,12 +333,12 @@ main .add-to-cart,
 	position: absolute;
 	right: 20px;
 	bottom: 20px;
-	background: #00E1FD;
+	background: #4A4A46;
 	width: 35px;
 	height: 35px;
 	text-align: center;
 	line-height: 35px;
-	color: #FAEBD7;
+	color: #fff;
 	border-radius: 50%;
 	cursor: pointer;
 	font-weight: 600;
@@ -335,25 +354,25 @@ main .add-to-cart:hover,
 
 
 /* Blogs */
-blog .cap {
+blogs .cap {
 	position: relative;
 	background: black;
 	color: #fff;
 }
 
-blog .logo {
+blogs .logo {
 	font-weight: 600;
 	font-size: 30px;
 	text-align: center;
 }
 
 
-blog  ul.nav {
+blogs  ul.nav {
 	float: right;
 	list-style: none;
 }
 
-blog  ul.nav li {
+blogs  ul.nav li {
 	display: inline;
 	margin-left: 40px;
 	cursor: pointer;
@@ -363,14 +382,14 @@ blog  ul.nav li {
 
 }
 
-blog  ul.nav li:hover {
+blogs  ul.nav li:hover {
 	opacity: 0.3;
 }
 
 
 
 
-blog  .shop-cart-basket {
+blogs  .shop-cart-basket {
 	float: right;
 	cursor: pointer;
 	transition: color, transform 1s ease;
@@ -379,13 +398,13 @@ blog  .shop-cart-basket {
 
 }
 
-blog  .shop-cart-basket:hover,
-blog	 .shop-cart-basket.active {
+blogs  .shop-cart-basket:hover,
+blogs	 .shop-cart-basket.active {
 	color: #FF4500;
 	transform: scale(1.5);
 }
 
-blog  .shop-cart {
+blogs  .shop-cart {
 	position: absolute;
 	top: 30px;
 	right: 0;
@@ -400,7 +419,7 @@ blog  .shop-cart {
 }
 
 
-blog  .shop-cart-client {
+blogs .shop-cart-client {
 	float: right;
 	cursor: pointer;
 	transition: color, transform 1s ease;
@@ -409,18 +428,30 @@ blog  .shop-cart-client {
 }
 
 
-blog  .shop-cart-client:hover,
-blog  .shop-card-client.active {
+blogs  .shop-cart-client:hover,
+blogs  .shop-card-client.active {
 	color: #2F4F4F;
 	transform: scale(1.5);
 }
+
+blogs .post {
+	display: flex;
+	padding: 50px;
+	margin: 15px;
+}
+
+blogs .img {
+	width: 20%;
+	height: 20%;
+}
+
 
 
 
 
 /* Blogs */
 
-
+/* Carousel */
 .text-1 {
 	text-align: center;
 	width: 100%;
@@ -429,26 +460,26 @@ blog  .shop-card-client.active {
 	font-size: 40px;
 }
 
-
-
 .item {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	user-select: none;
+	width: 100%;
 }
 
 .item-1 {
-	background: linear-gradient(to bottom, #00FF5B, #0014FF);
-	
+	background: #979498;
+	font-weight: 700;
 }
 
 .item-2 {
-	background: linear-gradient(to bottom, #00E1FD, #FC007A);
+	background: #979498;
+	font-weight: 700;
 }
 
 .item-3 {
-	background-color: #00008B;
+	background-color: #979498;
+	font-weight: 700;
 }
 
 
@@ -457,16 +488,5 @@ blog  .shop-card-client.active {
 	height: 150px;
 }
 
+/* Carousel */
 
-/* Footer */
-footer {
-	text-align: center;
-	margin-top: 100px;
-	padding: 50px;
-	background: black; 
-}
-
-footer .text {
-color: #fff;
-}
-/* Footer */
