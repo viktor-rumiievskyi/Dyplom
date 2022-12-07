@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState, Children, cloneElement } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { Accordion } from "react-bootstrap"
