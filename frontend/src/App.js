@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
-import Dashbourd from './components/Dashbourd';
+
 
 function App() {
 	const mode = useSelector((state) => state.mode);
@@ -17,7 +17,6 @@ function App() {
 			<CssBaseline/>
 		<Routes>
 		<Route path="/" element={<Main/>} />
-		<Route path="/dashbourd" element={<Dashbourd/>} />
 		</Routes>
 		</ThemeProvider>
 		</BrowserRouter>
